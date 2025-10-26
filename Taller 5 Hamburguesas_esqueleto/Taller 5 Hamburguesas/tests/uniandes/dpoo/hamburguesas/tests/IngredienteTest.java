@@ -21,6 +21,7 @@ public class IngredienteTest
     @AfterEach
     void tearDown( ) throws Exception
     {
+    	ingrediente1 = null;
     }
 
     @Test

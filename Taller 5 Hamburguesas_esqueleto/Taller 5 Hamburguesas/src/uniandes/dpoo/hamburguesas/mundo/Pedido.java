@@ -72,6 +72,11 @@ public class Pedido
     {
         return nombreCliente;
     }
+    
+    public String getDireccionCliente( )
+    {
+        return direccionCliente;
+    }
 
     /**
      * Agrega un nuevo producto al pedido

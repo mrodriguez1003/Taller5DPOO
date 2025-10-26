@@ -45,7 +45,11 @@ public class ProductoAjustado implements Producto
     @Override
     public int getPrecio( )
     {
-        return 0;
+    	int precioTotal = productoBase.getPrecio();
+        for (Ingrediente ingrediente : agregados) {
+            precioTotal += ingrediente.getCostoAdicional();
+        }
+        return precioTotal;
     }
 
     /**
@@ -53,6 +57,15 @@ public class ProductoAjustado implements Producto
      * 
      * El texto incluye el producto base, los ingredientes adicionales con su costo, los ingredientes eliminados, y el precio total
      */
+    
+    public void agregarIngrediente(Ingrediente ingrediente) {
+        agregados.add(ingrediente);
+    }
+
+    public void eliminarIngrediente(Ingrediente ingrediente) {
+        eliminados.add(ingrediente);
+    }
+    
     @Override
     public String generarTextoFactura( )
     {
